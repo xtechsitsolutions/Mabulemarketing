@@ -1,0 +1,2655 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MABULE | Digital Marketing</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --text-soft: #3a3632;
+  --muted: #6d675f;
+  --muted-dark: #a8a29e;
+  --surface: #141414;
+  --surface-2: #1a1a1a;
+  --line: #1f1f1f;
+  --brand: #621708;
+  --accent: #c8ff00;
+  --warm: #f5f1e8;
+  --whatsapp: #25d366;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+}
+.fonts {
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #22222222;
+}
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+#app-wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+
+header > div,
+#mobile-menu,
+.agency,
+#app-wrapper > section > .max-w-6xl,
+#contact > .max-w-2xl,
+footer > div {
+  width: min(1120px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header > div {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+header .font-display {
+  color: var(--brand);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  right: 1.5rem;
+}
+.flexitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav a,
+#mobile-menu a {
+  position: relative;
+  color: #080808 !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+#mobile-menu {
+  display: flex;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+#mobile-menu {
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.agency {
+  position: relative;
+  top: 67px;
+  z-index: 3;
+}
+
+.agency p {
+  margin: 0;
+  color: #b27409;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.top {
+  position: relative;
+  top: 5rem;
+ }
+#app-wrapper > section.relative.overflow-hidden {
+  padding-top: 20px;
+  padding-bottom: 76px;
+}
+
+.hero-blob {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+#app-wrapper > section.relative .hero-blob:first-child {
+  background: var(--accent);
+}
+
+#app-wrapper > section.relative .hero-blob:nth-child(2) {
+  background: var(--warm);
+}
+
+.hero-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-copy-wrap {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+/* .hero-kicker {
+  margin: 0 0 14px;
+  color: #8c6d15;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+} */
+
+.hero-copy {
+  width: 100%;
+  margin: 0 0 18px;
+  color: #464545;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#app-wrapper > section.relative p.mb-10.text-lg.leading-relaxed {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 0 30px;
+  margin-bottom: 2.5rem;
+  color: var(--text-soft);
+  font-size: 1.04rem;
+  line-height: 1.1;
+ 
+}
+
+.hero-actions {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 14px;
+  align-items: center;
+}
+
+.hero-actions,
+footer {
+  width: auto;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 9999px;
+  background: var(--whatsapp);
+  color: #08120d;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(255, 255, 255,);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.97;
+  box-shadow: 0 1px 2px rgba(144, 146, 145, 0.28);
+}
+
+.outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 28px;
+  border: 1px solid #2d2d2d;
+  border-radius: 9999px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.outline-btn:hover {
+  background: rgba(10, 10, 10, 0.04);
+  transform: translateY(-2px);
+}
+
+.hero-proof,
+.hero-exchange {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-proof {
+  margin-top: 18px;
+}
+
+.hero-proof span,
+.hero-exchange span {
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: #f3efe5;
+  color: #464039;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hero-demo {
+  flex: 1 1 380px;
+  max-width: 420px;
+  margin-left: auto;
+  height: 70vh;
+  position: relative;
+  left: 6rem;
+}
+
+.hero-demo-label {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.50rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  left: 2.1rem;
+}
+
+.phone-frame {
+  --phone-notch-height: 16px;
+  --phone-notch-offset: 10px;
+  --phone-safe-top: calc(var(--phone-notch-height) + var(--phone-notch-offset) + 14px);
+  position: relative;
+  width: 50%;
+  height: 60vh;
+  padding: 14px;
+  padding-top: 24px;
+  border-radius: 30px;
+  background: #0f0f0f;
+  border: 1px solid #202020;
+  box-shadow: 0 24px 70px rgba(255, 255, 255,);
+  margin: 0 auto;
+}
+
+.phone-notch {
+  position: absolute;
+  top: var(--phone-notch-offset);
+  left: 50%;
+  width: 110px;
+  height: var(--phone-notch-height);
+  border-radius: 9999px;
+  background: #1c1c1c;
+  transform: translateX(-50%);
+}
+
+.phone-screen {
+  position: relative;
+  min-height: clamp(328px, 58vw, 80px);
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgb(255, 255, 255);
+  padding: calc(var(--phone-safe-top) + 18px) 18px 18px;
+  background:
+    radial-gradient(circle at top right, rgba(200, 255, 0, 0.18), transparent 35%),
+    linear-gradient(180deg, #f9f5ea 0%, #f4efe4 42%, #efe7d8 100%);
+}
+
+.demo-step {
+  position: absolute;
+  inset: calc(var(--phone-safe-top) + 18px) 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+  animation: heroStory 16s infinite;
+}
+
+.step-two {
+  animation-delay: 4s;
+}
+
+.step-three {
+  animation-delay: 8s;
+}
+
+.step-four {
+  animation-delay: 12s;
+}
+
+@keyframes heroStory {
+  0%, 21% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  25%, 100% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+}
+
+.demo-card,
+.offer-card,
+.payment-card {
+  position: relative;
+  top: 5rem;
+  border-radius: 22px;
+  padding: 0px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 36px rgba(62, 226, 12, 0.08);
+}
+
+.warning-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 240, 228, 0.96) 100%);
+}
+
+.demo-tag {
+  margin: 0 0 10px;
+  color: #6d5b18;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: relative;
+  /* left: 2.5rem; */
+  text-align: center;
+}
+
+.demo-step h3 {
+  margin: 0 0 10px;
+  color: #141414;
+  font-family: "Syne", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.demo-step p {
+  margin: 0;
+  color: #4e493f;
+  font-size: 0.7rem;
+  line-height: 1.62;
+  text-align: center;
+}
+
+.bubble {
+  max-width: 86%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.06);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.bubble-in {
+  align-self: flex-start;
+  background: #f2ece0;
+  color: #1b1a18;
+}
+
+.bubble-out {
+  align-self: flex-end;
+  background: #20331d;
+  color: #ebffe6;
+}
+
+.accent-bubble {
+  background: var(--whatsapp);
+  color: #08120d;
+}
+
+.offer-card ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer-card li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  color: #4f493e;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.offer-card li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.payment-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #f5f0e5;
+  color: #1a1917;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.payment-row strong {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+}
+
+.payment-status {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(37, 211, 102, 0.14);
+  color: #0f4d25;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.hero-exchange {
+  margin-top: 16px;
+}
+
+/* .border-y {
+  position: none;
+  width: 83%;
+  margin: 0 auto;
+  top: 1.5rem;
+  border-top: 1px solid #242424;
+  border-bottom: 1px solid #242424;
+  overflow: hidden;
+}
+.marquee-track {
+  display: none;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+} */
+
+#services,
+#industries,
+#about,
+#pricing,
+#contact {
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+
+#services h2,
+#industries h2,
+#about h2,
+#pricing h2,
+#contact h2 {
+  width: min(720px, 60%);
+  margin: 0 0 16px;
+  padding-left: 0;
+  color: #222222;
+  font-family: "Syne", sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+#about h2 {
+  width: 100% ;
+  max-width: 460px;
+}
+
+#contact h2 {
+  width: 100%;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#services > div > p:first-child,
+#industries > div > p:first-child,
+#pricing > div > p:first-child,
+#contact > div > p:first-child,
+#about .fade-up > p:first-child {
+  margin-bottom: 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+#services > div > p:nth-child(3),
+#industries > div > p:nth-child(3),
+#pricing > div > p:nth-child(3),
+#contact > div > p:nth-child(3),
+#about .fade-up > p:nth-child(3) {
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 44px;
+  position: static;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.74;
+}
+
+#contact > div > p:first-child,
+#contact > div > p:nth-child(3) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grids {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#industries .grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#pricing .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card,
+.industry-card,
+.plan-card {
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.industry-card {
+  background: var(--surface-2);
+}
+
+.service-card:hover,
+.industry-card:hover,
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(10, 10, 10, 0.12);
+}
+
+.service-card h3,
+.industry-card h3,
+.plan-card h3 {
+  margin-bottom: 12px;
+  padding-left: 0;
+  color: #ffffff;
+  font-family: "Syne", sans-serif;
+  font-size: 1.14rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+.service-card p,
+.industry-card p,
+.plan-card p {
+  width: 100%;
+  position: static;
+}
+
+.service-card p,
+.industry-card p {
+  font-size: 0.95rem;
+  line-height: 1.68;
+}
+
+.industry-card p:empty {
+  display: none;
+}
+
+.plan-card > p:first-of-type {
+  margin-bottom: 12px !important;
+  color: var(--accent) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.plan-price {
+  margin-bottom: 10px !important;
+  color: #ffffff !important;
+  font-size: 2.3rem !important;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.plan-note {
+  margin-bottom: 24px !important;
+  color: #8f897d !important;
+  font-size: 0.94rem !important;
+}
+
+.feature-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #d6d3cd;
+  font-size: 0.93rem;
+}
+
+.feature-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.62;
+}
+
+.feature-list li::before {
+  content: "+";
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#about .rounded-full {
+  color: var(--accent) !important;
+}
+
+#about .overflow-hidden.rounded-2xl {
+  border: 1px solid var(--line) !important;
+}
+
+#about blockquote {
+  margin: 0;
+  line-height: 1.68;
+  text-wrap: balance;
+  text-align: start;
+  padding-left: 1.6rem;
+}
+
+#contact .max-w-2xl {
+  max-width: 760px;
+}
+
+#contact input,
+#contact textarea {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+footer {
+  background: #0f0f0f;
+}
+
+footer p:first-child {
+  padding-left: 0;
+}
+
+footer .whatsapp-btn {
+  white-space: nowrap;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .agency {
+    padding-top: 20px;
+  }
+.agency p {
+  margin: 0;
+  color: #b27409;
+  /* font-size: 0.30rem; */
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+  .hero-copy {
+    width: 74%;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  #app-wrapper > section.relative p.mb-10.max-w-2xl.text-lg.leading-relaxed {
+    width: 70%;
+  }
+.hero-proof, .hero-demo {
+  display: none;
+}
+  #services h2,
+  #industries h2,
+  #about h2,
+  #pricing h2,
+  #contact h2 {
+    width: 78%;
+  }
+
+  #industries .grid,
+  #pricing .grid,
+  .grids {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #services,
+  #industries,
+  #about,
+  #pricing,
+  #contact {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .hero-blob {
+    width: 360px;
+    height: 360px;
+    filter: blur(92px);
+  }
+}
+
+@media (max-width: 768px) {
+  header > div,
+  #mobile-menu,
+  .agency,
+  #app-wrapper > section > .max-w-6xl,
+  #contact > .max-w-2xl,
+  footer > div {
+    width: calc(100% - 32px);
+  }
+ header {
+    height: 4vh;
+  }
+  .top {
+    position: relative;
+    top: 0px;
+    padding: 0px;
+  }
+  header .font-display {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    position: relative;
+    bottom: 1.2rem;
+  }
+  .agency {
+    position: relative;
+    top: 1rem;
+    left: 0;
+    z-index: 3;
+    margin-bottom: 2rem;
+  }
+  .agency p {
+    font-size: 0.5rem;
+  }
+
+  #app-wrapper > section.relative.overflow-hidden {
+   /*  padding-top: 24px; */
+    padding-bottom: 72px;
+  }
+
+  .hero-copy {
+  width: 70%;
+  /* font-size: 30px; */
+  font-weight: 600;
+  line-height: 45px;
+  }
+
+  #app-wrapper > section.relative p.mb-10.max-w-2xl.text-lg.leading-relaxed {
+    width: 100%;
+    margin-bottom: 32px;
+    font-size: 0.96rem ;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .whatsapp-btn,
+  .hero-actions,
+  footer .whatsapp-btn {
+    width: 100%;
+  }
+
+  #services h2,
+  #about h2,
+  #pricing h2,
+  #contact h2 {
+    width: 100%;
+  }
+#services h2 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 35px;
+  width: 30%;
+}
+#industries h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+}
+#about h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
+}
+#pricing h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
+}
+#contact h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+  #services > div > p:nth-child(3),
+  #industries > div > p:nth-child(3),
+  #pricing > div > p:nth-child(3),
+  #contact > div > p:nth-child(3),
+  #about .fade-up > p:nth-child(3) {
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+  }
+  .hero-proof, .hero-demo {
+  display: none;
+  }
+
+  .grids,
+  #industries .grid,
+  #pricing .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card,
+  .industry-card,
+  .plan-card {
+    padding: 22px;
+  }
+
+  #services,
+  #industries,
+  #about,
+  #pricing,
+  #contact {
+    padding-top: 72px;
+    padding-bottom: 6px;
+  }
+
+  .hero-blob {
+    width: 250px;
+    height: 250px;
+    filter: blur(82px);
+  }
+}
+
+@media (max-width: 480px) {
+
+  header {
+    height: 4vh;
+  }
+  .top {
+    position: relative;
+    top: 0px;
+    padding: 0px;
+  }
+  header .font-display {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    position: relative;
+    bottom: 1.2rem;
+  }
+  .agency {
+    position: relative;
+    top: 1rem;
+    left: 0;
+    z-index: 3;
+    margin-bottom: 5rem;
+  }
+  .agency p {
+    font-size: 0.5rem;
+  }
+  .hero-copy {
+  width: 80%;
+  margin: 0 0 18px;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+
+  .whatsapp-btn,
+  .outline-btn {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+  }
+.hero-proof, .hero-demo {
+  display: none;
+}
+#services h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+#industries h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  min-width: 100%;
+}
+#about h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
+}
+#pricing h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
+}
+#contact h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+  .plan-price {
+    font-size: 1.85rem;
+  }
+
+  .feature-list {
+    font-size: 0.85rem;
+  }
+
+  #services,
+  #industries,
+  #about,
+  #pricing,
+  #contact {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .hero-blob {
+    width: 210px;
+    height: 210px;
+    filter: blur(70px);
+  }
+}
+
+@media (max-width: 375px) {
+   header {
+    height: 4vh;
+  }
+  .top {
+    position: relative;
+    top: 0px;
+    padding: 0px;
+  }
+  header .font-display {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    position: relative;
+    bottom: 1.2rem;
+  }
+  .agency {
+    position: relative;
+    top: 1rem;
+    left: 0;
+    z-index: 3;
+    margin-bottom: 5rem;
+  }
+  .agency p {
+    font-size: 0.5rem;
+  }
+  .hero-copy {
+  width: 100%;
+  margin: 0 0 18px;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* #app-wrapper > section.relative p.mb-10.max-w-2xl.text-lg.leading-relaxed {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 0 30px;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.5;
+} */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 9999px;
+  background: var(--whatsapp);
+  color: #08120d;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(255, 255, 255,);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.main-whatsapp {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.01px;
+}
+  .hero-proof, .hero-demo {
+  display: none;
+}
+.outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  width: max(50%, 100%);
+  padding: 14px 28px;
+  border: 1px solid #2d2d2d;
+  border-radius: 9999px;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+ #services h2 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+}
+#services,
+  #industries,
+  #about,
+  #pricing,
+  #contact {
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+ #industries h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #about h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #pricing h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #contact h2 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #footer p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ .service-card h3,
+.industry-card h3,
+.plan-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+footer .whatsapp-btn {
+  font-size: 10px;
+  font-weight: 800;
+  position: relative;
+  right: 0;
+  text-align: center;
+  padding: 5px;
+}
+
+  .service-card,
+  .industry-card,
+  .plan-card {
+    padding: 18px;
+  }
+
+  .feature-list {
+    gap: 8px;
+    font-size: 0.82rem;
+  }
+}
+@media (max-width: 240px) {
+  header {
+    height: 4vh;
+  }
+  .top {
+    position: relative;
+    top: 0px;
+    padding: 0px;
+  }
+  header .font-display {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    position: relative;
+    bottom: 1.2rem;
+  }
+  .agency {
+    position: relative;
+    top: 5px;
+    left: 0;
+    z-index: 3;
+  }
+  .agency p {
+    font-size: 0.5rem;
+  }
+  .hero-copy {
+  width: 100%;
+  margin: 0 0 18px;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+#app-wrapper > section.relative p.mb-10.max-w-2xl.text-lg.leading-relaxed {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 0 30px;
+  /* margin-bottom: 2.5rem; */
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 9999px;
+  background: var(--whatsapp);
+  color: #08120d;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(255, 255, 255,);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.main-whatsapp {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.01px;
+}
+.outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 28px;
+  border: 1px solid #2d2d2d;
+  border-radius: 9999px;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.hero-proof, .hero-demo {
+  display: none;
+}
+#app-wrapper > section.relative.overflow-hidden {
+  padding-top: 22px;
+  padding-bottom: 6px;
+}
+.rounded-2xl {
+  width: 100%;
+}
+.px-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+#services .py-24 {
+  padding: 0;
+}
+#services > div > p:first-child,
+#industries > div > p:first-child,
+#pricing > div > p:first-child,
+#contact > div > p:first-child,
+#about .fade-up > p:first-child {
+  font-size: 0.54rem;
+}
+  #services h2 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+}
+#services,
+  #industries,
+  #about,
+  #pricing,
+  #contact {
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+ #industries h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #about h2 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #pricing h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #contact h2 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ #footer p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+ }
+ .service-card h3,
+.industry-card h3,
+.plan-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+footer .whatsapp-btn {
+  font-size: 10px;
+  font-weight: 800;
+  position: relative;
+  right: 0;
+  text-align: center;
+  padding: 5px;
+}
+}
+
+/* Header + mobile menu polish */
+header {
+  min-height: 56px;
+}
+
+header > div.flexitem {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+header .font-display {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  right: 0;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: 28px;
+}
+
+header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0;
+  line-height: 1;
+}
+
+#mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 0 0 1px rgba(200, 255, 0, 0.14),
+    0 0 24px rgba(200, 255, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#mobile-menu-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(200, 255, 0, 0.24),
+    0 0 34px rgba(200, 255, 0, 0.28);
+}
+
+#mobile-menu-btn.is-open {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(37, 211, 102, 0.24),
+    0 0 38px rgba(37, 211, 102, 0.34);
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.is-open {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  header {
+    min-height: 56px;
+  }
+
+  header > div.flexitem {
+    min-height: 56px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 28px;
+  }
+
+  header .font-display {
+    position: static;
+    bottom: auto;
+    min-height: 26px;
+    font-size: 1.02rem;
+    line-height: 1;
+  }
+
+  header nav {
+    display: none !important;
+  }
+
+  #mobile-menu-btn {
+    display: inline-flex !important;
+    align-self: center;
+    margin-left: auto;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 16px;
+    right: 16px;
+    width: auto;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    box-shadow:
+      0 0 0 1px rgba(200, 255, 0, 0.18),
+      0 18px 46px rgba(20, 20, 20, 0.14),
+      0 0 44px rgba(200, 255, 0, 0.16);
+    gap: 6px;
+    z-index: 9998;
+  }
+
+  #mobile-menu.hidden {
+    display: none !important;
+  }
+
+  #mobile-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 14px;
+    border-radius: 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  #mobile-menu a::after {
+    display: none;
+  }
+
+  #mobile-menu a:hover {
+    background: rgba(200, 255, 0, 0.12);
+    color: #0b0b0b !important;
+    transform: translateX(2px);
+  }
+}
+
+@media (min-width: 768px) {
+  #mobile-menu {
+    display: none !important;
+  }
+
+  #mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Focused layout fixes requested */
+.hero-layout {
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.hero-copy-wrap {
+  min-width: 0;
+  padding-top: 90px;
+}
+
+.hero-demo {
+  flex: 0 0 320px;
+  max-width: 320px;
+  height: auto;
+  min-height: 0;
+  margin-left: 0;
+}
+
+.hero-demo-label {
+  left: 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.phone-frame {
+  width: min(100%, 286px);
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.phone-screen {
+  min-height: 382px;
+  padding: calc(var(--phone-safe-top) + 8px) 12px 12px;
+}
+
+.demo-step {
+  inset: calc(var(--phone-safe-top) + 8px) 12px 12px;
+}
+
+.demo-card,
+.offer-card,
+.payment-card {
+  top: 0;
+  padding: 12px;
+}
+
+.offer-card li {
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.payment-row {
+  font-size: 0.76rem;
+}
+
+.payment-row strong {
+  font-size: 0.88rem;
+}
+
+.payment-status {
+  font-size: 0.68rem;
+}
+
+.agency {
+  padding-top: 32px;
+  margin-bottom: 6px;
+}
+
+.agency p {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.top {
+  top: 0;
+}
+
+#app-wrapper > section.relative.overflow-hidden {
+  padding-top: 0;
+  padding-bottom: 64px;
+}
+
+/* .hero-copy {
+  margin-bottom: 8px;
+} */
+
+#app-wrapper > section.relative p.mb-10.text-lg.leading-relaxed {
+ /*  margin-bottom: 16px; */
+  line-height: 1.22;
+}
+
+.hero-actions {
+  gap: 10px;
+}
+
+.hero-proof {
+  margin-top: 10px;
+}
+
+header {
+  min-height: auto;
+}
+
+header > div.flexitem {
+  min-height: auto;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  gap: 12px;
+}
+
+header .font-display {
+  min-height: auto;
+  right: 0;
+  font-size: 9px !important;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+header nav {
+  align-items: center;
+  gap: 12px;
+}
+
+header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: auto;
+  padding: 0;
+  line-height: 1;
+}
+
+#mobile-menu-btn {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#mobile-menu-btn:hover,
+#mobile-menu-btn.is-open {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+}
+
+#mobile-menu-btn svg,
+#mobile-menu-btn i {
+  width: 9px !important;
+  height: 9px !important;
+}
+
+@media (max-width: 1075px) and (min-width: 1025px) {
+  .hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 272px;
+    gap: 18px;
+  }
+
+  .hero-copy-wrap {
+    max-width: none;
+  }
+
+  .hero-demo {
+    flex: 0 0 272px;
+    max-width: 272px;
+    position: relative;
+    left: 1rem;
+  }
+
+  .phone-frame {
+    width: 100%;
+    max-width: 272px;
+  }
+
+  .phone-screen {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  header > div.flexitem {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    gap: 18px;
+  }
+
+  header .font-display {
+    position: static;
+    bottom: auto;
+    min-height: auto;
+    font-size: 9px !important;
+  }
+
+  #mobile-menu-btn {
+    width: 9px;
+    height: 9px;
+    margin-left: auto;
+    align-self: center;
+  }
+
+  #mobile-menu {
+    top: calc(100% + 6px);
+    left: 12px;
+    right: 12px;
+  }
+
+  .agency {
+    padding-top: 28px;
+    margin-bottom: 4px;
+  }
+
+  #app-wrapper > section.relative.overflow-hidden {
+    padding-top: 0;
+  }
+}
+
+/* Typography + alignment polish requested */
+body,
+li,
+label,
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", sans-serif;
+  font-weight: 400 !important;
+}
+
+.font-display,
+h1,
+h2,
+h3,
+.hero-copy,
+.service-card h3,
+.industry-card h3,
+.plan-card h3,
+.demo-step h3,
+.plan-name,
+.plan-price {
+  font-family: "Space Grotesk", sans-serif !important;
+}
+
+header .font-display,
+.hero-copy,
+.service-card h3,
+.industry-card h3,
+.plan-card h3,
+.demo-step h3,
+h1 {
+  font-weight: 800 !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.03em !important;
+}
+
+#services h2,
+#industries h2,
+#about h2,
+#pricing h2,
+#contact h2 {
+  font-family: "Space Grotesk", sans-serif !important;
+  font-weight: 600 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.service-card p,
+.industry-card p,
+#services > div > p:nth-child(3),
+#industries > div > p:nth-child(3),
+#pricing > div > p:nth-child(3),
+#contact > div > p:nth-child(3),
+#about .fade-up > p:nth-child(3),
+#pricing .plan-note,
+#app-wrapper > section.relative p.mb-10.text-lg.leading-relaxed,
+.payment-status,
+.offer-card li,
+.hero-demo-label {
+  font-weight: 400 !important;
+}
+
+.whatsapp-btn,
+.outline-btn,
+#mobile-menu a,
+header nav a {
+  font-weight: 600 !important;
+}
+
+header .font-display {
+  right: 0;
+}
+
+.agency,
+.hero-copy-wrap {
+  padding-left: 0;
+}
+
+.agency p,
+.hero-copy,
+#app-wrapper > section.relative p.mb-10.text-lg.leading-relaxed,
+.hero-actions,
+.hero-proof {
+  text-align: left;
+}
+
+.agency p {
+  font-family: "Inter", sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: 0.22em;
+}
+
+.hero-copy {
+  font-size: 30px;
+  line-height: 0.98 !important;
+  letter-spacing: -0.03em !important;
+}
+
+#app-wrapper > section.relative p.mb-10.text-lg.leading-relaxed {
+  line-height: 1.35;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-weight: 800 !important;
+}
+
+.price-type {
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.plan-note {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.plan-monthly {
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+#mobile-menu-btn {
+  width: 14px;
+  height: 14px;
+  flex-basis: 14px;
+}
+
+#mobile-menu-btn svg,
+#mobile-menu-btn i {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+@media (max-width: 767px) {
+  #mobile-menu-btn {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Section layout restore */
+html,
+body,
+#app-wrapper {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#about .mx-auto.grid,
+#contact .max-w-2xl,
+#contact form,
+#contact .grid,
+footer > div {
+  min-width: 0;
+}
+
+#about .fade-up.relative,
+#about .overflow-hidden.rounded-2xl {
+  width: 100%;
+  max-width: 100%;
+}
+
+#about .overflow-hidden.rounded-2xl {
+  padding: clamp(24px, 4vw, 48px);
+}
+
+#about .space-y-6 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+#about blockquote {
+  position: static !important;
+  width: 100%;
+  margin: 0;
+  padding-left: 1rem;
+  overflow-wrap: anywhere;
+}
+
+#contact .max-w-2xl {
+  width: min(760px, 100%);
+}
+
+#contact input,
+#contact textarea,
+#contact button[type="submit"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+footer {
+  overflow-x: hidden;
+}
+
+footer > div {
+  max-width: 100%;
+}
+
+footer .whatsapp-btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+footer .whatsapp-btn span {
+  overflow-wrap: anywhere;
+}
+
+.outline-btn,
+.whatsapp-btn {
+  max-width: 100%;
+}
+
+.footer-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.footer-brand,
+.footer-label {
+  margin: 0;
+}
+
+.footer-brand {
+  font-size: 1.2rem;
+}
+
+.footer-copy {
+  margin: 12px 0 10px;
+  color: #b6aea1;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.footer-meta {
+  margin: 0;
+  color: #6f695f;
+  font-size: 0.82rem;
+}
+
+.footer-label {
+  margin-bottom: 12px;
+  color: #c8ff00;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-contact-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #f3efe5;
+  text-decoration: none;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.footer-contact-link span {
+  overflow-wrap: anywhere;
+}
+
+.footer-contact-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.footer-contact-link i,
+.footer-contact-link svg,
+.footer-whatsapp i,
+.footer-whatsapp svg {
+  width: 16px;
+  height: 16px;
+  color: #c8ff00;
+  flex: 0 0 auto;
+}
+
+.footer-whatsapp {
+  width: 100%;
+  justify-content: center;
+}
+
+.footer-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.footer-social-chip {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.footer-social-chip span {
+  color: #8f897d;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-social-chip strong {
+  color: #f3efe5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  .footer-shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+}
+
+header > div.flexitem,
+.agency,
+#app-wrapper > section.relative > .max-w-6xl {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 767px) {
+
+  #about .mx-auto.grid {
+    gap: 32px;
+  }
+
+  #about .overflow-hidden.rounded-2xl {
+    padding: 24px;
+  }
+
+  footer > div {
+    width: calc(100% - 32px);
+  }
+
+  .footer-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-social-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+@media (max-width: 240px) {
+  footer {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  footer > div {
+    width: 100% !important;
+  }
+
+  .footer-shell,
+  .footer-brand-column,
+  .footer-contact-column,
+  .footer-social-column {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-contact-link,
+  .footer-whatsapp {
+    justify-content: center;
+  }
+
+  .footer-contact-link {
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .footer-social-chip {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .lefted {
+    position: relative;
+    right: 15px;
+  }
+}
+
+</style>
+</head>
+<body class="h-full">
+  <div class="grain"></div>
+  <div id="app-wrapper">
+    <header>
+      <div class=" flexitem mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#app-wrapper" class="font-display text-2xl font-extrabold tracking-tight lefted" style="color: #621708;">MABULE</a>
+        <nav class="hidden items-center gap-8 text-sm font-medium tracking-wide md:flex">
+          <a href="#services" style="color: #080808;">Solutions</a>
+          <a href="#industries" style="color: #080808;">Industries</a>
+          <a href="#about" style="color: #080808;">About</a>
+          <a href="#pricing" style="color: #080808;">Plans</a>
+          <a href="#contact" style="color: #080808;">Contact</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i data-lucide="menu" style="width: 24px; height: 24px; color: #0a0a0a;"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden flex-col gap-3 px-6 pb-4 text-sm font-medium md:hidden">
+        <a href="#services" style="color: #080808;">Solutions</a>
+        <a href="#industries" style="color: #080808;">Industries</a>
+        <a href="#about" style="color: #080808;">About</a>
+        <a href="#pricing" style="color: #080808;">Plans</a>
+        <a href="#contact" style="color: #080808;">Contact</a>
+      </div>
+    </header>
+    <div class="agency">
+      <p class="mb-6 text-sm  uppercase">Digital Marketing Solutions</p>
+    </div>
+    <section class="relative overflow-hidden top">
+      <div class="hero-blob" style="top: -100px; right: -150px; background: #ffffff;"></div>
+      <div class="hero-blob" style="top: 220px; left: -200px; background: #ffffff; opacity: 0.6;"></div>
+      <div class="relative z-10 mx-auto max-w-6xl">
+        <div class="hero-layout">
+          <div class="hero-copy-wrap">
+            <!-- <p class="hero-kicker">WhatsApp business strategy, ready replies, offer boxes, and payments</p> -->
+            <h1 class="hero-copy">
+              Simple Marketing Tools That Help Businesses To Grow.
+            </h1>
+            <p class="mb-10 max-w-2xl text-lg leading-relaxed line-height margin-top">
+              Do Not Lose The Sale. Mabule Helps Turn From Invisible To Paid.
+            </p>
+            <div class="hero-actions">
+              <a class="whatsapp-btn sm:w-auto sm:px-8 main-whatsapp" data-wa-message="Hi Mabule, I need a WhatsApp business marketing plan with ready messages, offer boxes, and payment flow." href="#">
+                <span>START FREE FOR 30 DAYS</span>
+                <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+              </a>
+              <a href="#services" class="outline-btn">SEE THE SOLUTIONS</a>
+            </div>
+            <div class="hero-proof">
+              <span>Ready Messages</span>
+              <span>Offer Box</span>
+              <span>Payment Flow</span>
+              <span>WhatsApp Business Setup</span>
+            </div>
+          </div>
+
+          <div class="hero-demo fade-up" data-delay="120">
+            <p class="hero-demo-label">A business owner goes from invisible to paid - all inside WhatsApp</p>
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="demo-step step-one">
+                  <div class="demo-card warning-card">
+                    <p class="demo-tag">Problem</p>
+                    <h3>No Market Plan. No Clear Offer. No Sales Path.</h3>
+                    <p>People Are Online, But They Still Do Not Know What You Sell Or How To Buy From You.</p>
+                  </div>
+                </div>
+
+                <div class="demo-step step-two">
+                  <div class="bubble bubble-in">Hi, I Run A Business But I Am Not Getting Customers.</div>
+                  <div class="bubble bubble-out">Let's Fix Your Market Practical For 30 Days First.</div>
+                  <div class="bubble bubble-out accent-bubble">I Can Send You Ready WhatsApp Replies And A Simple Plan.</div>
+                </div>
+
+                <div class="demo-step step-three">
+                  <div class="offer-card">
+                    <p class="demo-tag">Solution</p>
+                    <h3>1 Page Website</h3>
+                    <ul>
+                      <li>Ready message templates</li>
+                      <li>Offer box with clear pricing</li>
+                      <li>Target The Right Customers</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="demo-step step-four">
+                  <div class="payment-card">
+                    <p class="demo-tag">Payment</p>
+                    <h3>Invoice sent and payment confirmed.</h3>
+                    <div class="payment-row">
+                      <span>Strategy Box</span>
+                      <strong>R670</strong>
+                    </div>
+                    <div class="payment-status">Paid Via WhatsApp Business Exchange</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           <!--  <div class="hero-exchange">
+              <span>Hook</span>
+              <span>Problem</span>
+              <span>Ready Reply</span>
+              <span>Offer Box</span>
+              <span>Payment</span>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="border-y">
+      <div class="marquee-track font-display text-xl font-bold tracking-wide .moving-services">
+        <span class="mx-8">SEO &amp; SEARCH MARKETING / SOCIAL MEDIA MARKETING / CAMPAIGN ADS / EMAIL MARKETING / WHATSAPP FUNNELS</span>
+        <span class="mx-8">SEO &amp; SEARCH MARKETING / SOCIAL MEDIA MARKETING / CAMPAIGN ADS / EMAIL MARKETING / WHATSAPP FUNNELS</span>
+      </div>
+    </div> -->
+
+    <section id="services" class="w-full py-24">
+      <div class="mx-auto max-w-6xl">
+        <p class="fade-up mb-3 text-sm font-semibold uppercase tracking-[0.3em]" style="color: #7b7b7b;">Our Solutions</p>
+        <h2 class="font-display fade-up mb-4 text-1xl font-bold md:text-1xl fonts">Built to move your business forward.</h2>
+        <p class="fade-up mb-14 max-w-2xl text-lg" style="color: #7a7a7a;">
+          These Are The Core Growth Solutions We Use To Help Businesses Get Recorgnise, And Stay Organised.
+        </p>
+        <div class="grids grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="service-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="0">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(200, 255, 0, 0.1);">
+              <i data-lucide="search" style="width: 22px; height: 22px; color: #c8ff00;"></i>
+            </div>
+            <h3 class="font-display mb-2 text-xl font-bold text-white">Digital Design & Websites</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a29e;">Business websites, Landing pages, Website support and build traffic that keeps compounding over time.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I am interested in your Digital Design and Websites solution. I need help with a business website, landing page, or website support. Please tell me what is included." href="#">
+              <span>Ask on WhatsApp</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="service-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="100">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(200, 255, 0, 0.1);">
+              <i data-lucide="target" style="width: 22px; height: 22px; color: #c8ff00;"></i>
+            </div>
+            <h3 class="font-display mb-2 text-xl font-bold text-white">Paid Media</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a29e;">Google, Meta, and TikTok campaigns built to turn attention into paying customers.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I am interested in your Paid Media solution. Please share how you run and optimise ad campaigns." href="#">
+              <span>Ask on WhatsApp</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="service-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="200">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(200, 255, 0, 0.1);">
+              <i data-lucide="pen-tool" style="width: 22px; height: 22px; color: #c8ff00;"></i>
+            </div>
+            <h3 class="font-display mb-2 text-xl font-bold text-white">Marketing Content</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a29e;">Social media designs, marketing posters, promotional visuals and messaging that helps your brand look premium and clear.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I am interested in your Marketing Content solution. Please tell me what is included for social media designs, promotional visuals, and messaging support." href="#">
+              <span>Ask on WhatsApp</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="service-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="300">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(200, 255, 0, 0.1);">
+              <i data-lucide="share-2" style="width: 22px; height: 22px; color: #c8ff00;"></i>
+            </div>
+            <h3 class="font-display mb-2 text-xl font-bold text-white">Branding &amp; Identity</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a29e;">Logo design, Business cards, Brand identity that grow real community, improve trust, and create consistent demand.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I am interested in your Branding and Identity solution. Please tell me how you help with logos, business cards, and brand identity." href="#">
+              <span>Ask on WhatsApp</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="service-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="400">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(200, 255, 0, 0.1);">
+              <i data-lucide="mail" style="width: 22px; height: 22px; color: #c8ff00;"></i>
+            </div>
+            <h3 class="font-display mb-2 text-xl font-bold text-white">Email Marketing</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a29e;">Automated follow-ups, launch campaigns, and customer journeys that keep leads warm.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I am interested in your Email Marketing solution. Please share more details." href="#">
+              <span>Ask on WhatsApp</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="service-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="500">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style="background: rgba(200, 255, 0, 0.1);">
+              <i data-lucide="bar-chart-3" style="width: 22px; height: 22px; color: #c8ff00;"></i>
+            </div>
+            <h3 class="font-display mb-2 text-xl font-bold text-white">Analytics &amp; CRO</h3>
+            <p class="text-sm leading-relaxed" style="color: #a8a29e;">Better tracking, sharper reporting, and conversion fixes that help every click work harder.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I am interested in your Analytics and CRO solution. Please tell me how you improve conversions." href="#">
+              <span>Ask on WhatsApp</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="w-full  py-24" style="background: #ffffff;">
+      <div class="mx-auto max-w-6xl">
+        <p class="fade-up mb-3 text-sm font-semibold uppercase tracking-[0.3em]" style="color: #c8ff00;">Industries We Help</p>
+        <h2 class="font-display fade-up mb-4 text-1xl font-bold md:text-1xl" style="color: #222222;text-transform:uppercase; width: 60%;">Support shaped around the type of business you run.</h2>
+        <p class="fade-up mb-14 max-w-2xl text-lg" style="color: #a8a29e;">
+          We work with growth-focused businesses that need practical marketing help, clearer positioning, and stronger conversion systems.
+        </p>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <article class="industry-card fade-up flex h-full flex-col rounded-2xl p-7" style="background: #1a1a1a;" data-delay="0">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em]" style="color: #c8ff00;"></p>
+            <h3 class="font-display mb-3 text-2xl  text-white" style="font-size: 1rem;text-transform:uppercase; letter-spacing: 1px;">Small Local Shops</h3>
+            <p class="text-sm leading-relaxed" style="color: #cfcfcf;">Helping Small Businesses Turn Local Attention Into Daily Sales.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I run a small local shop and I would like help growing with digital marketing." href="#">
+              <span>Let's talk</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="industry-card fade-up flex h-full flex-col rounded-2xl p-7" style="background: #1a1a1a;" data-delay="100">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em]" style="color: #c8ff00;"></p>
+            <h3 class="font-display mb-3 text-2xl  text-white" style="font-size: 1rem;text-transform:uppercase; letter-spacing: 1px;">E-Commerce Stores</h3>
+            <p class="text-sm leading-relaxed" style="color: #cfcfcf;">Helping Retailers Turn Online Attention Into Prududct Sales.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I run an e-commerce store and I would like help increasing online sales." href="#">
+              <span>Let's talk</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="industry-card fade-up flex h-full flex-col rounded-2xl p-7" style="background: #1a1a1a;" data-delay="200">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em]" style="color: #c8ff00;"></p>
+            <h3 class="font-display mb-3 text-2xl  text-white" style="font-size: 1rem;text-transform:uppercase; letter-spacing: 1px;">Service Providers</h3>
+            <p class="text-sm leading-relaxed" style="color: #cfcfcf;">Helping service businesses attract higher-intent leads and convert them into consultations and jobs.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I run a service business and I would like help generating better quality leads." href="#">
+              <span>Let's talk</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="industry-card fade-up flex h-full flex-col rounded-2xl p-7" style="background: #1a1a1a;" data-delay="300">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em]" style="color: #c8ff00;"></p>
+            <h3 class="font-display mb-3 text-2xl  text-white" style="font-size: 1rem;text-transform:uppercase; letter-spacing: 1px;">Institutions</h3>
+            <p class="text-sm leading-relaxed" style="color: #cfcfcf;">Helping Industrial Businesses Connect With Serious Buyers & Partners.</p>
+            <a class="whatsapp-btn mt-6" data-wa-message="Hi Mabule, I represent an institution and I would like to discuss your marketing support." href="#">
+              <span>Let's talk</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="w-full py-24">
+      <div class="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
+        <div class="fade-up">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em]" style="color: #7b7b7b;">About Us</p>
+          <h2 class="font-display mb-6 text-1xl font-bold md:text-1xl" style="color: #121212;text-transform:uppercase; font-size: 1.7rem;">Built different.<br>On purpose.</h2>
+          <p class="mb-8 text-lg leading-relaxed" style="color: #666666;">
+            We are not a factory. We are a focused team that builds practical systems for businesses that need clearer strategy, stronger offers, and better customer follow-through.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="rounded-full px-4 py-2 text-xs font-semibold" style="background: #1f1f1f; color: #c8ff00;">Data-Driven</span>
+            <span class="rounded-full px-4 py-2 text-xs font-semibold" style="background: #1f1f1f; color: #c8ff00;">Hands-On</span>
+            <span class="rounded-full px-4 py-2 text-xs font-semibold" style="background: #1f1f1f; color: #c8ff00;">Transparent</span>
+            <span class="rounded-full px-4 py-2 text-xs font-semibold" style="background: #1f1f1f; color: #c8ff00;">Results-First</span>
+          </div>
+        </div>
+        <div class="fade-up relative">
+          <div class="overflow-hidden rounded-2xl border p-12" style="background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%); border-color: #1f1f1f;">
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full font-display text-lg font-bold" style="background: #c8ff00; color: #0a0a0a;">TT</div>
+                <div>
+                  <p class="font-display font-bold text-white">Tjie Thato</p>
+                  <p class="text-sm" style="color: #a8a29e;">Founder &amp; Strategy Lead</p>
+                </div>
+              </div>
+              <blockquote class="border-l-4 pl-5 text-lg italic leading-relaxed" style="border-color: #c8ff00; color: #d6d3cd;">
+                "We do not chase vanity metrics. Every message, offer, and campaign must earn trust and move the sale forward."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="w-full py-24" style="background: linear-gradient(180deg, #ffffff 0%, #f5f1e8 100%);">
+      <div class="mx-auto max-w-6xl">
+        <p class="fade-up mb-3 text-sm font-semibold uppercase tracking-[0.3em]" style="color: #7b7b7b;">Once-Off Websites & Premium Plans</p>
+        <h2 class="font-display fade-up mb-4 text-1xl font-bold md:text-1xl" style="color: #141414;text-transform:uppercase; font-size: 1.7rem">choose Monthly plan built for your industry.</h2>
+        <p class="fade-up mb-14 max-w-2xl text-lg" style="color: #666666;">
+          Our Pricing Is Based On Business Size, Goals, & The Level Of Strategy Reguired. No One-Size-Fits-All Growth.
+        </p>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <article class="plan-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="0">
+            <h3 class="font-display mb-3 text-1xl font-bold text-white" style="font-size: 1rem; text-transform: uppercase;">Starter Growth</h3>
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em]" style="color: #c8ff00;font-size: 0.5rem;">New or small brands that want a professional presence.</p>
+            <p class="plan-price font-display mb-2  text-white"style="font-size: 1.5rem;">R950 <span class="price-type">once-off</span></p>
+            <p class="plan-note mb-6"><span class="plan-monthly">R150</span> per month</p>
+            <ul class="feature-list mb-8">
+              <li>1 Page Website.</li>
+              <li>WhatsApp Contact Integration.</li>
+              <li>Branding Support.</li>
+              <li>Monthly Content.</li>
+              <li>Marketing Guidance.</li>
+              <li>WhatsApp Business Product/service Setup.</li>
+              <li>Email Support.</li>
+            </ul>
+            <a class="whatsapp-btn mt-auto" data-wa-message="Hi Mabule, I am interested in the Starter Growth plan at R950 once-off and R150 per month. Please send me more details." href="#">
+              <span>START</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="plan-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="100">
+            <h3 class="font-display mb-3 text-2xl font-bold text-white"style="font-size: 1rem;text-transform: uppercase;">Brand Builder</h3>
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em]" style="color: #c8ff00;font-size: 0.5rem;">Growing brands ready to improve reach and conversion.</p>
+            <p class="plan-price font-display mb-2 font-bold text-white"style="font-size: 1.5rem;">R2 500 <span class="price-type">once-off</span></p>
+            <p class="plan-note mb-6"><span class="plan-monthly">R200</span> per month</p>
+            <ul class="feature-list mb-8">
+              <li>Everything In Starter.</li>
+              <li>Website Support + SEO Optimisation.</li>
+              <li>Paid Ads Manegement.</li>
+              <li>Conversion Tracking.</li>
+              <li>5-Page Website.</li>
+              <li>Tools-Assited Content + Analytics.</li>
+              <li>Strategy Support.</li>
+            </ul>
+            <a class="whatsapp-btn mt-auto" data-wa-message="Hi Mabule, I am interested in the Brand Builder plan at R2 500 once-off and R200 per month. Please send me more details." href="#">
+              <span>START</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+          <article class="plan-card fade-up flex h-full flex-col rounded-2xl border p-7" style="background: #141414; border-color: #1f1f1f;" data-delay="300">
+            <h3 class="font-display mb-3 text-2xl font-bold text-white" style="font-size: 1rem; text-transform: uppercase;">Market Leader</h3>
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.25em]" style="color: #c8ff00;font-size: 0.5rem;">Serious growth-focused brands ready to lead their category.</p>
+            <p class="plan-price font-display mb-2 font-bold text-white"style="font-size: 1.5rem;">R8 000+ <span class="price-type">once-off</span></p>
+            <p class="plan-note mb-6"><span class="plan-monthly">R250</span> per month</p>
+            <ul class="feature-list mb-8">
+              <li>Everything In Growth.</li>
+              <li>6+ Pages Website.</li>
+              <li>Premium Visibility + Conversion Growth.</li>
+              <li>Advanced WhatsApp Funnel + Lead Optimisation.</li>
+              <li>New Product Launch Boosts.</li>
+              <li>Monthly Growth Analytics + Strategy.</li>
+              <li>Social Media Management.</li>
+              <li>Priority Support.</li>
+            </ul>
+            <a class="whatsapp-btn mt-auto" data-wa-message="Hi Mabule, I am interested in the Market Leader plan at R8 000+ once-off and R250 per month. Please send me more details." href="#">
+              <span>START</span>
+              <i data-lucide="message-circle"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="w-full py-24" style="background: #111111;">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="fade-up mb-3 text-sm font-semibold uppercase tracking-[0.3em]" style="color: #c8ff00;">Contact</p>
+        <h2 class="font-display fade-up mb-4 text-1xl font-bold text-white md:text-1xl" style="text-transform:uppercase; font-size: 1.8rem; color: #ffffff;">Let's talk growth.</h2>
+        <p class="fade-up mb-10 text-lg" style="color: #a8a29e;">
+          Fill in the form below and we will open WhatsApp with your message ready to send to +27 67 923 9725.
+        </p>
+        <form id="contact-form" class="fade-up space-y-5 text-left">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="name" class="mb-1 block text-sm font-medium" style="color: #a8a29e;">Name</label>
+              <input id="name" type="text" placeholder="Your name" class="w-full rounded-xl border px-5 py-3.5 text-sm outline-none transition-all focus:ring-2" style="background: #1a1a1a; border-color: #2a2a2a; color: #f0ece4; --tw-ring-color: #c8ff00;" required>
+            </div>
+            <div>
+              <label for="email" class="mb-1 block text-sm font-medium" style="color: #a8a29e;">Email</label>
+              <input id="email" type="email" placeholder="you@company.com" class="w-full rounded-xl border px-5 py-3.5 text-sm outline-none transition-all focus:ring-2" style="background: #1a1a1a; border-color: #2a2a2a; color: #f0ece4; --tw-ring-color: #c8ff00;" required>
+            </div>
+          </div>
+          <div>
+            <label for="message" class="mb-1 block text-sm font-medium" style="color: #a8a29e;">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell us what you need help with..." class="w-full resize-none rounded-xl border px-5 py-3.5 text-sm outline-none transition-all focus:ring-2" style="background: #1a1a1a; border-color: #2a2a2a; color: #f0ece4; --tw-ring-color: #c8ff00;" required></textarea>
+          </div>
+          <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-bold tracking-wide transition-all hover:scale-[1.02]" style="background: #25d366; color: #08120d;">
+            <span>Send to WhatsApp</span>
+            <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+          </button>
+        </form>
+        <div id="form-success" class="hidden mt-6 rounded-xl p-4 font-medium" style="background: rgba(37, 211, 102, 0.1); color: #6ef0a5;">
+          WhatsApp opened with your message. Review it and press send.
+        </div>
+      </div>
+    </section>
+
+    <footer class="w-full border-t px-6 py-12" style="border-color: #1f1f1f;">
+      <div class="mx-auto footer-shell max-w-6xl">
+        <div class="footer-brand-column">
+          <p class="font-display footer-brand" style="color: #c8ff00;">MABULE</p>
+          <p class="footer-copy">Digital marketing systems built to help businesses get seen, build trust, and move from attention to payment.</p>
+          <p class="footer-meta">&copy; 2026 Mabule Digital Marketing. All rights reserved.</p>
+        </div>
+
+        <div class="footer-contact-column">
+          <p class="footer-label">Contact</p>
+          <div class="footer-contact-list">
+            <a class="footer-contact-link" href="tel:+27679239725">
+              <i data-lucide="phone"></i>
+              <span>Call +27-67-923-9725</span>
+            </a>
+            <a class="footer-contact-link" href="mailto:tttjiematlosha@gmail.com">
+              <i data-lucide="mail"></i>
+              <span>tttjiematlosha@gmail.com</span>
+            </a>
+          </div>
+          <a class="whatsapp-btn footer-whatsapp" data-wa-message="Hi Mabule, I would like to get in touch about your digital marketing services." href="#">
+            <span>WhatsApp +27-67-923-9725</span>
+            <i data-lucide="message-circle"></i>
+          </a>
+        </div>
+
+        <div class="footer-social-column">
+          <p class="footer-label">Social Media</p>
+          <div class="footer-social-grid">
+            <div class="footer-social-chip">
+              <span>Facebook</span>
+              <strong>mabule-company</strong>
+            </div>
+            <div class="footer-social-chip">
+              <span>LinkedIn</span>
+              <strong>mabule-company</strong>
+            </div>
+            <div class="footer-social-chip">
+              <span>Instagram</span>
+              <strong>mabule-company</strong>
+            </div>
+            <div class="footer-social-chip">
+              <span>Threads</span>
+              <strong>mabule-company</strong>
+            </div>
+            <div class="footer-social-chip">
+              <span>TikTok</span>
+              <strong>mabule-company</strong>
+            </div>
+            <div class="footer-social-chip">
+              <span>YouTube</span>
+              <strong>mabule-company</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="mabule.js"></script>
+</body>
+</html>
